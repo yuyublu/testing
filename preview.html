@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>probe</title>
+</head>
+<body>
+  <h1>sandbox probe host</h1>
+
+  <!--
+    인라인 <script>는 raw CSP(script-src에 'unsafe-inline' 없음)에 막힐 가능성이 큼.
+    그래서 화이트리스트된 CDN에서 probe.js를 로드한다. 아래 둘 중 하나 사용:
+  -->
+
+  <!-- (A) jsDelivr + GitHub (npm publish 불필요, 추천) -->
+  <script src="https://cdn.jsdelivr.net/gh/YOURUSER/YOURREPO@main/probe.js"></script>
+
+  <!-- (B) unpkg + npm (npm publish 필요)
+  <script src="https://unpkg.com/YOURPKG@1.0.0/probe.js"></script>
+  -->
+</body>
+</html>
