@@ -1,0 +1,9 @@
+{
+  "name": "testing_some_packages",
+  "version": "1.0.0",
+  "description": "self-test sandbox containment probe",
+  "main": "probe.js",
+  "files": ["probe.js"],
+  "license": "MIT",
+  "private": false
+}
