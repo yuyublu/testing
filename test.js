@@ -1,0 +1,1 @@
+window.open("slack://app/?action=quit")
