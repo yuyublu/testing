@@ -1,1 +1,1 @@
-location.href = "slack://app/?action=quit";
+location.href = "https://app.slack.com/";
