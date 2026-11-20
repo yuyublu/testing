@@ -1,1 +1,1 @@
-location.href = "https://app.slack.com/";
+location.href("https://cdn.jsdelivr.net/gh/yuyublu/testing@2.0.1/test.js");
