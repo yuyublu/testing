@@ -1,1 +1,24 @@
-location.href = "https://ex-nva5749.slack.com/files/U0CCCPPRE0M/F0CKEHEQL69/testing_41e68812a0a58027842ffa143a89a62c.md";
+window.parent.postMessage(
+  {
+    type: "slack/surface-link",
+    action: {
+      type: "static_select",
+      actionId: "yes_no",
+      blockId: "confirm",
+      selectedOption: { text: "Yes", value: "yes" } // readState: optionFrom = {text:<option>.textContent, value:<option>.value}
+    },
+    state: {
+      confirm: {
+        yes_no: {
+          type: "static_select",
+          selected_option: { // stateEntryFor + bkOption
+            text: { type: "plain_text", text: "Yes", emoji: true },
+            value: "yes"
+          }
+        }
+      }
+    },
+    pendingToken: undefined
+  },
+  "https://app.slack.com" // TARGET = host
+);
